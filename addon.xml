@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="script.module.youget"
+       name="you-get"
+       version="0.0.1"
+       provider-name="feilong">
+  <requires>
+    <import addon="xbmc.python" version="2.25.0"/>
+  </requires>
+  <extension point="xbmc.python.module"
+             library="lib" />
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en_GB">you-get on kodi</summary>
+    <description lang="en_GB">Packed for KODI from https://github.com/soimort/you-get</description>
+    <platform>all</platform>
+    <language></language>
+    <license>MIT</license>
+    <forum></forum>
+    <website>https://github.com/soimort/you-get</website>
+    <source>https://github.com/beenje/script.module.requests</source>
+    <email>feilongphone@gmail.com</email>
+  </extension>
+</addon>
