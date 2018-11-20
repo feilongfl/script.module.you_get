@@ -1,6 +1,6 @@
-script.module.requests
+script.module.you_get
 ======================
 
-Python requests library packed for KODI.
+Python you_get library packed for KODI.
 
-See https://github.com/requests/requests
+See https://github.com/soimort/you-get
