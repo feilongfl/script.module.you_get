@@ -1,0 +1,25 @@
+language: python
+sudo: false
+dist: trusty
+
+os:
+  - linux
+ 
+script:
+  - sh ./build.sh
+  
+# public repo on Travis CI
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+  
+deploy:
+  provider: releases
+  api_key: ${githubtoken}
+  file:
+    - "./script.module.you_get.zip"
+  skip_cleanup: true
+  on:
+    repo: feilongfl/script.module.you_get
+    branch:
+      - master
+    tags: true
