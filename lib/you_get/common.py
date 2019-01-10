@@ -19,7 +19,7 @@ from .util import log, term
 from .util.git import get_version
 from .util.strings import get_filename, unescape_html
 from . import json_output as json_output_
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer,encoding='utf8')
+# sys.stdout = io.TextIOWrapper(sys.stdout.buffer,encoding='utf8')
 
 SITES = {
     '163'              : 'netease',
@@ -102,6 +102,7 @@ SITES = {
     'soundcloud'       : 'soundcloud',
     'ted'              : 'ted',
     'theplatform'      : 'theplatform',
+    'tiktok'           : 'tiktok',
     'tucao'            : 'tucao',
     'tudou'            : 'tudou',
     'tumblr'           : 'tumblr',
@@ -127,6 +128,7 @@ SITES = {
     'youtube'          : 'youtube',
     'zhanqi'           : 'zhanqi',
     'zhibo'            : 'zhibo',
+    'zhihu'            : 'zhihu',
 }
 
 dry_run = False
@@ -146,10 +148,10 @@ fake_headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101 Firefox/60.0',  # noqa
 }
 
-if sys.stdout.isatty():
-    default_encoding = sys.stdout.encoding.lower()
-else:
-    default_encoding = locale.getpreferredencoding().lower()
+# if sys.stdout.isatty():
+    # default_encoding = sys.stdout.encoding.lower()
+# else:
+default_encoding = locale.getpreferredencoding().lower()
 
 
 def rc4(key, data):
@@ -1592,6 +1594,7 @@ def google_search(url):
 
 
 def url_to_module(url):
+    log.i(url)
     try:
         video_host = r1(r'https?://([^/]+)/', url)
         video_url = r1(r'https?://[^/]+(.*)', url)
@@ -1601,6 +1604,7 @@ def url_to_module(url):
         video_host = r1(r'https?://([^/]+)/', url)
         video_url = r1(r'https?://[^/]+(.*)', url)
 
+    log.i(video_host)
     if video_host.endswith('.com.cn') or video_host.endswith('.ac.cn'):
         video_host = video_host[:-3]
     domain = r1(r'(\.[^.]+\.[^.]+)$', video_host) or video_host
