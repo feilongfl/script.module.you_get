@@ -7,7 +7,7 @@
     <import addon="xbmc.python" version="2.25.0"/>
   </requires>
   <extension point="xbmc.python.module"
-             library="lib" />
+             library="lib/you_get/src/you_get" />
   <extension point="xbmc.addon.metadata">
     <summary lang="en_GB">you-get on kodi</summary>
     <description lang="en_GB">Packed for KODI from https://github.com/soimort/you-get</description>

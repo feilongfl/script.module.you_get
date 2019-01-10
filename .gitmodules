@@ -1,0 +1,3 @@
+[submodule "lib/you_get"]
+	path = lib/you_get
+	url = git@github.com:feilongfl/you-get.git
